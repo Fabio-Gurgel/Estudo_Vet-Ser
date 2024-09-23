@@ -11,6 +11,5 @@ public class VeterinarioController {
 
     @PostMapping
     public void cadastrar(DadosCadastroVeterinario dados) {
-
     }
 }
