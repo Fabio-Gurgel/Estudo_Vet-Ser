@@ -1,10 +1,9 @@
-package vet.ser.api.controller;
+package vet.ser.api.paciente;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import vet.ser.api.paciente.DadosCadastroPaciente;
 
 @RestController
 @RequestMapping("/pacientes")
