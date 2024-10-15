@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class VeterinarioController {
 
     @Autowired
-    VeterinarioRepository repository;
+    VeterinarioService service;
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid DadosCadastroVeterinario dados) {
-        repository.save(new Veterinario(dados));
+    public void cadastrar(@RequestBody @Valid DadosCadastroVeterinario dadosParaCadastro) {
+        service.cadastrar(dadosParaCadastro);
     }
 }
