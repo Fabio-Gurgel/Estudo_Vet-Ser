@@ -15,12 +15,12 @@ public record DadosCadastroPaciente(
         @NotBlank
         String animal,
 
-        @NotNull
         Integer idade,
 
-        @NotBlank
         String raca,
+
         String pelagem,
+
         String observacao,
 
         @NotNull

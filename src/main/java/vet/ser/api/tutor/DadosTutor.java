@@ -19,6 +19,7 @@ public record DadosTutor(
         @Email
         String tutorEmail,
 
+        @NotBlank
         String tutorTelefone,
 
         @NotNull
