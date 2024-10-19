@@ -22,6 +22,7 @@ public class Paciente {
 
     private String nome;
     private String animal;
+    private Integer idade;
     private String raca;
     private String pelagem;
     private String observacao;
@@ -32,6 +33,7 @@ public class Paciente {
     public Paciente(DadosCadastroPaciente dados) {
         this.nome = dados.nome();
         this.animal = dados.animal();
+        this.idade = dados.idade();
         this.raca = dados.raca();
         this.pelagem = dados.pelagem();
         this.observacao = dados.observacao();
