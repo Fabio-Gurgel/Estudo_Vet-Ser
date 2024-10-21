@@ -29,14 +29,14 @@ public class PacienteService {
 
     private void validarEmail(String email) {
         String mensagemDeEmailInvalido = "Email já cadastrado em outro paciente";
-        if (repository.existsByTutorEmail(email)) {
+        if (repository.existsByTutorTutorEmail(email)) {
             throw new ValidationException(mensagemDeEmailInvalido);
         }
     }
 
     private void validarCpf(String cpf) {
         String mensagemDeCpfInvalido = "Cpf já cadastrado em outro paciente";
-        if (repository.existsByTutorCpf(cpf)) {
+        if (repository.existsByTutorTutorCpf(cpf)) {
             throw new ValidationException(mensagemDeCpfInvalido);
         }
     }
