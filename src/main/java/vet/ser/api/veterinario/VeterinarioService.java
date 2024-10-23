@@ -4,6 +4,8 @@ import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VeterinarioService {
     @Autowired
@@ -13,6 +15,10 @@ public class VeterinarioService {
         this.validarDadosAntesDeCadastrar(dadosParaCadastro);
         return repository.save(new Veterinario(dadosParaCadastro));
     };
+
+    public List<DadosListagemVeterinario> listar() {
+        return repository.findAll().stream().map(DadosListagemVeterinario::new).toList();
+    }
 
     public void validarDadosAntesDeCadastrar(DadosCadastroVeterinario dadosParaCadastro) {
         String mensagemDeDadosNulos = "Envie os dados do veterinário para concluir o cadastro";
