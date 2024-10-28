@@ -2,6 +2,8 @@ package vet.ser.api.veterinario;
 
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +18,8 @@ public class VeterinarioService {
         return repository.save(new Veterinario(dadosParaCadastro));
     };
 
-    public List<DadosListagemVeterinario> listar() {
-        return repository.findAll().stream().map(DadosListagemVeterinario::new).toList();
+    public Page<DadosListagemVeterinario> listar(Pageable paginacao) {
+        return repository.findAll(paginacao).map(DadosListagemVeterinario::new);
     }
 
     public void validarDadosAntesDeCadastrar(DadosCadastroVeterinario dadosParaCadastro) {

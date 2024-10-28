@@ -2,6 +2,8 @@ package vet.ser.api.veterinario;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +23,7 @@ public class VeterinarioController {
     }
 
     @GetMapping
-    public List<DadosListagemVeterinario> listar() {
-        return service.listar();
+    public Page<DadosListagemVeterinario> listar(Pageable paginacao) {
+        return service.listar(paginacao);
     }
 }
