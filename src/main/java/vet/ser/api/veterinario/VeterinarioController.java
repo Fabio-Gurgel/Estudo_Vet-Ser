@@ -22,6 +22,10 @@ public class VeterinarioController {
         service.cadastrar(dadosParaCadastro);
     }
 
+    // paginação:
+    // ?page=0
+    // ?size=10
+    // ?sort=nome,desc
     @GetMapping
     public Page<DadosListagemVeterinario> listar(Pageable paginacao) {
         return service.listar(paginacao);
